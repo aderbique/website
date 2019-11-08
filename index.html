@@ -49,15 +49,30 @@
                         <br>
                     
                 </div>
-            </div><div data-silex-type="container-element" class="editable-style container-element button silex-id-1432759239777-26" style="">
+            </div><div data-silex-type="html-element" class="editable-style silex-id-1573186596171-3 html-element silex-component silex-component-skill-bars" style=""><div class="silex-element-content">
+  <div class="skillbar clearfix " data-percent="70%">
+    <div class="skillbar-title" style="background: #6adcfa;"><span>Skill #1</span></div>
+    <div class="skillbar-bar" style="background-color: #6adcfa;"></div>
+    <div class="skill-bar-percent">Good</div>
+  </div>
 
-
-                <div data-silex-type="text-element" class="editable-style text-element silex-id-1432759239676-25 centered-text" style="">
-                    <div class="silex-element-content normal"><a href="./" class="page-link-active">
-                        </a><p><a href="./" class="page-link-active">Learn More
-                    </a></p></div>
-                </div>
-            </div></div></div>
+<style type="text/css">.skillbar {position: relative; display: block; margin-bottom: 15px; width: 100%; background: #eee; height: 35px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; -webkit-transition: 0.4s linear; -moz-transition: 0.4s linear; -ms-transition: 0.4s linear; -o-transition: 0.4s linear; transition: 0.4s linear; -webkit-transition-property: width, background-color; -moz-transition-property: width, background-color; -ms-transition-property: width, background-color; -o-transition-property: width, background-color; transition-property: width, background-color;}.skillbar-title {position: relative; float: left; width: 25%; font-weight: bold; font-size: 13px; color: #ffffff; background: #6adcfa; -webkit-border-top-left-radius: 3px; -webkit-border-bottom-left-radius: 4px; -moz-border-radius-topleft: 3px; -moz-border-radius-bottomleft: 3px; border-top-left-radius: 3px; border-bottom-left-radius: 3px;}.skillbar-title span {display: block; text-align: center; background: rgba(0, 0, 0, 0.1); height: 35px; line-height: 35px; -webkit-border-top-left-radius: 3px; -webkit-border-bottom-left-radius: 3px; -moz-border-radius-topleft: 3px; -moz-border-radius-bottomleft: 3px; border-top-left-radius: 3px; border-bottom-left-radius: 3px;}.skillbar-bar {float: left; height: 35px; width: 0px; border-radius: 0 3px 3px 0; -moz-border-radius: 0 3px 3px 0; -webkit-border-radius: 0 3px 3px 0;}.skill-bar-percent {position: absolute; right: 10px; top: 0; font-size: 11px; height: 35px; line-height: 35px; color: rgba(0, 0, 0, 0.4);}</style>
+<script type="text/javascript">
+  var fillBarSize = $('.skillbar').width() * (1 - 25 / 100);
+  var doc = $(document);
+  doc.scroll(function() {
+    var skillbars = $('.skillbar');
+    // Start animation when the skillbars hit the middle of the screen
+    if (skillbars.offset().top <= (doc.scrollTop() + $(window).height()/2)) {
+      $('.skillbar').each(function(){
+        $(this).find('.skillbar-bar').delay(500).animate({
+          width: (fillBarSize * parseInt($(this).attr('data-percent')) / 100) + 'px'
+        },6000);
+      });
+    }
+  });
+</script>
+</div></div></div></div>
 
     
 
